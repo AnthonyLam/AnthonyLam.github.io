@@ -1,25 +1,33 @@
 ---
 layout: post
-title:  "Welcome to Jekyll!"
-date:   2014-12-10 19:41:38
-categories: jekyll update
+title:  "My VHDL Adventure"
+date:   2014-12-11
+categories: fpga vhdl ece
 ---
-You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
 
-To add new posts, simply add a file in the `_posts` directory that follows the convention `YYYY-MM-DD-name-of-post.ext` and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.
+One of my recent VHDL projects needed a 200 Hz signal to multiplex a 4 digit seven segment display. Any faster than 1kHz and the LED's don't have enough time to turn on and any slower we could potentially see flickering.
 
-Jekyll also offers powerful support for code snippets:
+The solution I arrived upon:
+{%highlight vhdl %}
 
-{% highlight ruby %}
-def print_hi(name)
-  puts "Hi, #{name}"
-end
-print_hi('Tom')
-#=> prints 'Hi, Tom' to STDOUT.
-{% endhighlight %}
+    -- Generate a 200 Hz clock from our 32 MHz clock.
+    slow_clk: process(clk)
+    BEGIN
+        IF rising_edge(clk) THEN
 
-Check out the [Jekyll docs][jekyll] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll’s dedicated Help repository][jekyll-help].
+            IF(count(9 downto 0)) = "1111111110" THEN
+                clk_200hz <= not clk_200hz;
+                count <= (others => '0');
+            ELSE
+                count <= count + '1';
+            END IF;
+        END IF;
+    END PROCESS;
 
-[jekyll]:      http://jekyllrb.com
-[jekyll-gh]:   https://github.com/jekyll/jekyll
-[jekyll-help]: https://github.com/jekyll/jekyll-help
+{%endhighlight%}
+
+Sure enough everything was lit up and there was a success! But then I decided to dig deeper to make sure I was actually hitting my 200 Hz mark. Using a simulation and adding a waveform for my slow_clk signal:
+
+![Waveform screenshow](http://thelag.us/uploads/big/55bfd23a8f8b80be42ea5fa99e6e627f.jpg)
+
+One clock of my alleged 200 Hz clock pulses in 20 micro seconds. Wait a second, that should happen in 0.005 seconds. The clock is way too slow!
