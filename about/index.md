@@ -2,7 +2,7 @@
 layout: page
 title: About Me
 image:
-  feature: HeaderIMG.jpg
+  feature: WinterHeader.jpg
 comments: false
 ---
 
