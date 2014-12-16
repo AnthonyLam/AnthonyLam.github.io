@@ -1,5 +1,5 @@
 ---
-layout: posts
+layout: post
 title: Magical Voltage
 date: 2014-12-9
 categories: fpga vhdl ece
