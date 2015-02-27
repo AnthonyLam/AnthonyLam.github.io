@@ -1,26 +1,26 @@
 # Site settings
-title:       Pixyll
-email:       your_email@example.com
-author:      John Otander
-description: "A simple, beautiful theme for Jekyll that emphasizes content rather than aesthetic fluff."
+title:       __Innit__
+email:       thelamacmdr@gmail.com
+author:      Anthony Lam
+description: ""
 baseurl:     ""
-url:         "http://pixyll.com"
+url:         "https://anthonylam.github.io"
 
 # Google analytics
-google_analytics:
+google_analytics: UA-54297033-2
 
 # Optional features
-animated:           false
+animated:           true
 show_related_posts: false
-show_post_footers:  false
+show_post_footers:  true
 
 # Disqus post comments
 # (leave blank to disable Disqus)
-disqus_shortname:
+disqus_shortname: thelamacmdr
 
 # Social icons
 show_social_icons: false
-github_username:
+github_username: AnthonyLam
 stackoverflow_id:
 twitter_username:
 google_plus_id:
