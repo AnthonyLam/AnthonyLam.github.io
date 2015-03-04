@@ -10,6 +10,8 @@ tags:
     - lessons
 ---
 
+A bit of insight into the problems I ran into and the things I learned from my mistakes in using signals in my VHDL code.  The gist is: signals are always changing, focus on the changes in signal to get what I need.
+
 # Use Your Signals
 It's not often I get to spend hours upon hours fixing simple mistakes in my code but today was one such lucky day.
 
