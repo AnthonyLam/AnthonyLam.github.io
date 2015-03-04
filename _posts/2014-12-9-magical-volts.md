@@ -2,7 +2,11 @@
 layout: post
 title: Magical Voltage
 date: 2014-12-9
-categories: fpga vhdl ece
+categories: engineering
+tags:
+    - ece
+    - fpga
+    - vhdl
 ---
 
 Papilio FPGA 4 Digit 7 Segment display fixed!

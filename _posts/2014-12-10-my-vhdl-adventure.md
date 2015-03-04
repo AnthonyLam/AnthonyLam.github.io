@@ -2,7 +2,11 @@
 layout: post
 title:  "My VHDL Adventure"
 date:   2014-12-11
-categories: fpga vhdl ece
+categories: engineering
+tags:
+    - ece
+    - vhdl
+    - fpga
 ---
 
 One of my recent VHDL projects needed a 200 Hz signal to multiplex a 4 digit seven segment display. Any faster than 1kHz and the LED's don't have enough time to turn on and any slower we could potentially see flickering.

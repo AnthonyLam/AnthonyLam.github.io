@@ -2,7 +2,12 @@
 layout: post
 title: Lesson Learnt 1
 date: 2014-12-15
-categories: fpga vhdl ece lessonlearnt
+categories: engineering
+tags:
+    - fpga
+    - vhdl
+    - ece
+    - lessons
 ---
 
 # Use Your Signals
