@@ -8,7 +8,7 @@ def filenameConvert(name):
     return name
 
 now = datetime.datetime.now()
-dateString = now.strftime('%y-%m-%d') 
+dateString = now.strftime('%Y-%m-%d') 
 
 if len(sys.argv) == 0:
     print('Defaulting to standard name')
@@ -23,5 +23,7 @@ fo.write("layout: post\n")
 fo.write("title: " + title +"\n")
 fo.write("date: " + dateString  + "\n")
 fo.write("categories: \n")
+fo.write("tags: \n")
+fo.write("\t - example \n")
 fo.write("---\n")
 fo.close()
